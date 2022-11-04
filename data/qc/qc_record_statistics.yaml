@@ -1,0 +1,16 @@
+- describe: 所有质控统计
+  parame:
+    pageNo: 1
+    pageSize: 15
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 科室质控统计
+  parame:
+    pageNo: 1
+    pageSize: 15
+    deptId: '{{read_basic_info().user_info.deptId}}'
+  result:
+    code: 0
+    msg: 请求成功

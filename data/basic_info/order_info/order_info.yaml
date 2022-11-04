@@ -1,0 +1,23 @@
+analysisModel: 1
+bedNum: '5'
+content: 葡萄糖测定(血糖仪)
+deptId: '030401'
+deptName: 内分泌科病区
+docId: '1805'
+docName: 冯秋
+endTime: '2022-09-07 00:00:00'
+entrust: 葡萄糖测定(血糖仪)-Qid
+execNum: 0
+gender: 2
+id: 2684565
+iptNum: '1191702'
+name: 张其玉
+showType: 0
+startTime: '2022-09-06 03:30:00'
+status: 1
+testNum: 1
+timeSlot: 空腹
+timeType: 空腹
+type: 1
+userId: 99950100013063#1
+orderid: 549162

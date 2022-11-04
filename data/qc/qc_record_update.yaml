@@ -1,0 +1,29 @@
+- describe: 修改时间
+  parame:
+    id: '{{read_basic_info().qc_info.id}}'
+    liquidId: '{{read_basic_info().qc_info.liquidId}}'
+    measureTime: '{{get_time()}}'
+    paperId: '{{read_basic_info().qc_info.paperId}}'
+    result: '{{read_basic_info().qc_info.result}}'
+    sn: '{{read_basic_info().qc_info.sn}}'
+    value: {{read_basic_info().qc_info.value}}
+  result:
+    code: 0
+    msg: 请求成功
+
+#- describe: 修改质控结果
+#  parame:
+#    id: '{{read_basic_info().qc_info.id}}'
+#    liquidId: '{{read_basic_info().qc_info.liquidId}}'
+#    measureTime: '{{read_basic_info().qc_info.measureTime}}'
+#    paperId: '{{read_basic_info().qc_info.paperId}}'
+#    result:
+#    sn: '{{read_basic_info().qc_info.sn}}'
+#    value: 14
+#  result:
+#    code: 0
+#    msg: 请求成功
+
+
+
+

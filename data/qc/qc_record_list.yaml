@@ -1,0 +1,79 @@
+- describe: 所有质控
+  version: 3
+  parame:
+    pageNo: 1
+    pageSize: 15
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据科室查询
+  version: 3
+  parame:
+    pageNo: 1
+    pageSize: 15
+    deptId: '{{read_basic_info().user_info.deptId}}'
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据sn查询
+  version: 2
+  parame:
+    pageNo: 1
+    pageSize: 15
+    sn: {{read_basic_info().sn.sn}}
+
+  result:
+    code: 0
+    msg: 请求成功
+#
+- describe: 根据质控结果通过
+  version: 3
+  parame:
+    pageNo: 1
+    pageSize: 15
+    result: 0
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据质控结果不通过
+  version: 3
+  parame:
+    pageNo: 1
+    pageSize: 15
+    result: 1
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据低浓度
+  version: 3
+  parame:
+    pageNo: 1
+    pageSize: 15
+    type: 0
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据中浓度
+  version: 3
+  parame:
+    pageNo: 1
+    pageSize: 15
+    type: 1
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据高浓度
+  version: 3
+  parame:
+    pageNo: 1
+    pageSize: 15
+    type: 2
+  result:
+    code: 0
+    msg: 请求成功

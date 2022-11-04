@@ -1,0 +1,18 @@
+- describe: 血糖趋势图
+  version: 3
+  parame:
+    userId: '{{read_basic_info().inhos_patient_blood_info.userId}}'
+    patGluStatus: 1
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 血糖趋势图
+  version: 1
+  parame:
+    userId: '{{read_basic_info().inhos_patient_blood_info.userId}}'
+    startTime: '{{read_basic_info().inhos_patient_info.iptTime}}'
+    endTime: '{{get_time()}}'
+  result:
+    code: 0
+    msg: 请求成功

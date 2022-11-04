@@ -1,0 +1,69 @@
+- describe: 所有质控分析
+  parame:
+    type: 0
+    measureTimeEnd: #自动获取今天的23:59:59
+    measureTimeStart: #自动获取当月第一天的00:00:00
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据中浓度
+  parame:
+    type: 1
+    measureTimeEnd: #自动获取今天的23:59:59
+    measureTimeStart: #自动获取当月第一天的00:00:00
+
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据高浓度
+  parame:
+    type: 2
+    measureTimeEnd: #自动获取今天的23:59:59
+    measureTimeStart: #自动获取当月第一天的00:00:00
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据科室查询
+  parame:
+    type: 0
+    measureTimeEnd: #自动获取今天的23:59:59
+    measureTimeStart: #自动获取当月第一天的00:00:00
+    deptId: '{{read_basic_info().user_info.deptId}}'
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据sn查询
+  parame:
+    type: 0
+    measureTimeEnd: #自动获取今天的23:59:59
+    measureTimeStart: #自动获取当月第一天的00:00:00
+    sn: '{{read_basic_info().sn.sn}}'
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据质控结果通过
+  parame:
+    type: 0
+    measureTimeEnd: #自动获取今天的23:59:59
+    measureTimeStart: #自动获取当月第一天的00:00:00
+    result: 0
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据质控结果不通过
+  parame:
+    type: 0
+    measureTimeEnd: #自动获取今天的23:59:59
+    measureTimeStart: #自动获取当月第一天的00:00:00
+    result: 1
+  result:
+    code: 0
+    msg: 请求成功
+
+

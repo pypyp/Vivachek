@@ -1,0 +1,5 @@
+- describe: 添加质控
+  parame: {{qc_add()}}
+  result:
+    code: 0
+    msg: 请求成功

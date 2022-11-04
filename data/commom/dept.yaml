@@ -1,0 +1,6 @@
+- describe: 院内登陆权限的科室 以及检测时段共用
+  parame:
+    inhos: 1
+  result:
+    code: 0
+    msg: 请求成功

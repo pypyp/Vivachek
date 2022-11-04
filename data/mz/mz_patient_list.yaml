@@ -1,0 +1,59 @@
+
+- describe: 今日门诊
+  parame:
+    pageNo: 1
+    pageSize: 15
+    day: 1
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 历史门诊
+  parame:
+    pageNo: 1
+    pageSize: 15
+    day: 2
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据科室查询
+  parame:
+    pageNo: 1
+    pageSize: 15
+    day: 1
+    deptId: {{read_basic_info().user_info.deptId}}
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据姓名查询
+  parame:
+    pageNo: 1
+    pageSize: 15
+    day: 1
+    name: {{read_basic_info().user_info.deptId}}
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 根据手机号查询
+  parame:
+    pageNo: 1
+    pageSize: 15
+    day: 1
+    phone: {{read_mz_patient_info().phone}}
+  result:
+    code: 0
+    msg: 请求成功
+
+
+- describe: 根据身份证查询
+  parame:
+    pageNo: 1
+    pageSize: 15
+    day: 1
+    idCard: {{read_mz_patient_info().idCard}}
+  result:
+    code: 0
+    msg: 请求成功

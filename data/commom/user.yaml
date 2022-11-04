@@ -1,0 +1,43 @@
+- describe: 查询所有医护人员
+  parame:
+    inhos: 1
+  result:
+    code: 0
+    msg: 请求成功
+
+- describe: 查询所有护士
+  parame:
+    inhos: 1
+    type: 2
+  result:
+    code: 0
+    msg: 请求成功
+
+
+- describe: 查询所有医生
+  parame:
+    inhos: 1
+    type: 1
+  result:
+    code: 0
+    msg: 请求成功
+
+
+- describe: 根据科室查询
+  parame:
+    inhos: 1
+    deptId: '{{read_basic_info().inhos_patient_info.deptId}}'
+  result:
+    code: 0
+    msg: 请求成功
+
+
+- describe: 组合查询
+  parame:
+    inhos: 1
+    deptId: '{{read_basic_info().inhos_patient_info.deptId}}'
+    type: 2
+
+  result:
+    code: 0
+    msg: 请求成功
