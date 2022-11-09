@@ -1,37 +1,3 @@
-class father():
-    def a(self):
-        print(1)
-
-    @classmethod
-    def b(cls):
-        print(2)
-
-    @staticmethod
-    def c():
-        print(3)
-
-
-class son(father):
-
-    @classmethod
-    def b(cls):
-        print(1)
-        super().b()
-
-        super().c()
-
-
-# print(father.b())
-# from functools import reduce
-# print(reduce(lambda x,y:x+y,range(6)))
-import requests, json
-from common.yaml_util import \
-    clear_yaml, write_yaml, read_yaml
-
-
-# 导入模块
-import requests
-import json
 
 import requests
 

@@ -133,21 +133,6 @@
   paperNum: 100
   productionDate: '2021-03-18'
   specs: 0
-- batchNum: c200265-B
-  createTime: '2021-03-23 15:57:38'
-  enterName: 吕峦
-  expiryDate: '2022-10-02'
-  highMaxLimit: 21.8
-  highMinLimit: 14.5
-  hospitalName: 成都市第五人民医院
-  id: 10
-  lowMaxLimit: 2.9
-  lowMinLimit: 1.2
-  mediumMaxLimit: 8.1
-  mediumMinLimit: 5.4
-  paperNum: 100
-  productionDate: '2020-10-03'
-  specs: 0
 - batchNum: c210020-B
   createTime: '2021-03-23 15:55:55'
   enterName: 吕峦
@@ -177,19 +162,4 @@
   mediumMinLimit: 5.2
   paperNum: 1
   productionDate: '2020-12-23'
-  specs: 0
-- batchNum: C200265-B
-  createTime: '2021-01-14 08:17:25'
-  enterName: 肖莲花
-  expiryDate: '2022-10-02'
-  highMaxLimit: 21.8
-  highMinLimit: 14.5
-  hospitalName: 成都市第五人民医院
-  id: 7
-  lowMaxLimit: 2.9
-  lowMinLimit: 1.2
-  mediumMaxLimit: 8.1
-  mediumMinLimit: 5.4
-  paperNum: 10
-  productionDate: '2020-10-03'
   specs: 0

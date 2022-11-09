@@ -6,7 +6,7 @@ from common.read_yaml import load
 from common.com import Ran
 import time
 import datetime
-from testCase.get_basic import qc_record
+from prepare.get_basic import qc_record
 from config.contast import Path
 
 sys.path.append(r'' + os.path.abspath('../'))

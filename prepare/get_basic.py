@@ -41,7 +41,7 @@ class mz(object):
         })
         return data
 
-
+"获取患者的基本信息"
 class zy(object):
     @staticmethod
     def get_patient_info():
@@ -65,6 +65,8 @@ class zy(object):
             data["method"] = 1
             data['deviceNo'] = read_yaml('headers')['sn']
             data['paperNum'] = 1
+
+
 
         return data
 

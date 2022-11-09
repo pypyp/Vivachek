@@ -2,16 +2,30 @@ from testCase.offline_basic import basic
 import path
 
 
+def get_url(type, ip, port):
+    if type == 3:
+        port = int(port) + 1000
+        url = "http://" + ip + ":" + str(port) + "/vivachekcloud/api/"
+        return url
+
+    else:
+        url = "http://" + ip + ":" + str(port) + "/vivachekcloud/"
+        return url
+
+
 class Config(object):
     """
     登陆用户信息
     type：1客户端
-          2网页端
+          3网页端
     """
 
+    TYPE = 3
+    IP = "47.111.0.135"
+    PORT = '10192'
     info = {
-        "type": 3,
-        "url": "http://47.111.0.135:11192/vivachekcloud/api/",
+        "type": TYPE,
+        "url":get_url(TYPE, IP, PORT),
         "login": {
             "hisId": "8036",
             "password": "123456",
@@ -62,9 +76,9 @@ class Url(object):
     GLU_UPDATE = url + 'inhos/glu/update'
     GLU_DEL = url + 'inhos/glu/delete'
     WEB_MONITORLIST = url + 'inhos/measure/glu_order/web_monitorList'
-    ADD_MEASURE=url + 'inhos/measure/glu_order/addMeasure'
-    ORDER_UPDATE=url + 'inhos/measure/glu_order/update'
-    ORDER_STOP =url + 'inhos/measure/glu_order/stop'
+    ADD_MEASURE = url + 'inhos/measure/glu_order/addMeasure'
+    ORDER_UPDATE = url + 'inhos/measure/glu_order/update'
+    ORDER_STOP = url + 'inhos/measure/glu_order/stop'
     APP_MONITORLIST = url + 'inhos/measure/glu_order/monitorList'
     PATIENT_ORDER = url + "inhos/measure/glu_order/getPatientOrderList"
     PATIENT_ORDER_INFO = url + 'inhos/measure/glu_order/info'
@@ -193,17 +207,13 @@ class Path(object):
             "QC_RECORD_STATISTICS": ROOT_PATH + "\\qc\\qc_record_statistics.yaml",  # 质控统计
             "QC_RECORD_ANALYSIS": ROOT_PATH + "\\qc\\qc_record_analysis.yaml",  # 质控分析
 
-            "ADD_MEASURE":ROOT_PATH + "\\order\\glu_order_addMeasure.yaml",  # web检测任务列表
+            "ADD_MEASURE": ROOT_PATH + "\\order\\glu_order_addMeasure.yaml",  # web检测任务列表
             "ORDER_LIST": ROOT_PATH + "\\order\\inhos_measure_glu_order_Web_OrderList.yaml",  # web检测任务列表
             "PATIENT_ORDER_LIST": ROOT_PATH + "\\order\\inhos_measure_glu_order_getPatientOrderList.yaml",  # web检测任务列表
             "ORDER_INFO": ROOT_PATH + "\\order\\inhos_measure_glu_order_info.yaml",  # web检测任务详情
             "ORDER_UPDATA": ROOT_PATH + "\\order\\inhos_measure_glu_order_update.yaml",  # 检测任务更新
             "ORDER_STOP": ROOT_PATH + "\\order\\inhos_measure_glu_order_stop.yaml",  # 检测任务更新
 
-
             }
-
-
-
 
 # 返回响应结果
