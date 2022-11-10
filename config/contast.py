@@ -20,7 +20,7 @@ class Config(object):
           3网页端
     """
 
-    TYPE = 3
+    TYPE = 1
     IP = "47.111.0.135"
     PORT = '10192'
     info = {

@@ -4,7 +4,7 @@
             */
 
     """
-from jsonschema import validate, draft7_format_checker
+from jsonschema import validate
 from jsonschema.exceptions import SchemaError, ValidationError
 from testCase.log import logger
 
@@ -51,7 +51,8 @@ class IsReapect(object):
     @staticmethod
     def isValidate(data, cl):
         try:
-            result = validate(instance=data, schema=cl, format_checker=draft7_format_checker)
+            result = validate(instance=data, schema=cl)
+
             if result is None:
                 return True
         except SchemaError as e:

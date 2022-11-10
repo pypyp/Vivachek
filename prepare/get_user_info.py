@@ -6,6 +6,7 @@ from common.yaml_util import write_yaml, read_yaml
 
 from config.contast import Url, Header, Path, Client_Header, Config
 from common.httpClient import RequestMain
+from testCase.log import logger
 
 sys.path.append(r'' + os.path.abspath('/'))
 re = RequestMain()
@@ -22,12 +23,10 @@ def get_user_info():
     elif type == 3:
         header = Header.header
 
-
-    # logger.log_info.info("登陆,获取token以及账号的一些基础信息")
-
+    logger.log_info.info("开始获取账号的权限等数据")
     response = re.request_main('post', Url.LOGIN, headers=header, json=info['login'])
     if response['code'] != 0:
-        print('账号密码错误')
+        logger.log_info.info("登陆报错")
         return False
     else:
         header["Access-Token"] = response['data']['accessToken']
@@ -51,4 +50,5 @@ def get_user_info():
         for i in info:
             l.append(i['id'])
         write_yaml({"permissions": l}, Path.path['basic']['HEADER_PATH'])
+        logger.log_info.info("获取账号的权限等数据获取完毕")
         return True

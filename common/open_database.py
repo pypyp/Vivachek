@@ -15,7 +15,7 @@ class MysqlDb(object):
                                     password=Config.database['MYSQL_PASSWD'],
                                     charset='utf8', autocommit=True)
         # 通过 cursor() 创建游标对象，并让查询结果以字典格式输出
-        print(self.conn)
+
         self.cur = self.conn.cursor(cursor=pymysql.cursors.DictCursor)
 
     def __del__(self):  # 对象资源被释放时触发，在对象即将被删除时的最后操作
@@ -27,7 +27,6 @@ class MysqlDb(object):
     def select_db(self, sql):
         """查询"""
         # 检查连接是否断开，如果断开就进行重连
-        print(sql)
         logger.log_info.info('执行的sql%s', sql
                              )
         self.conn.ping(reconnect=True)

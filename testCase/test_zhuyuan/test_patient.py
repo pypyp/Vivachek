@@ -19,11 +19,12 @@ re = RequestMain()
 @allure.feature('住院患者')
 class TestZhuYuan(object):
     @allure.title('患者列表')
+    @pytest.mark.skipif('201010101' not in read_yaml('permissions') and "1010101" not in read_yaml('permissions'),
+                        reason='该账号无此权限')
     @pytest.mark.parametrize('info',
                              yaml.safe_load(read_yaml_info(Path.path['INHOS_PATIENT_LIST'])))
     def test_in_patient(self, info):
-
-        if read_yaml('headers')['Platform'] == str(3):
+        if read_yaml('headers')['Platform'] == "3":
             if info['version'] == 2 or info['version'] == 3:
                 response = re.request_main('post', Url.PATIENT_LIST, headers=read_yaml('headers'),
                                            json=info['parame'])
@@ -54,11 +55,12 @@ class TestZhuYuan(object):
                         old_list = new_list
 
     @allure.title('出院患者列表')
+    @pytest.mark.skipif('1010102' not in read_yaml('permissions'), reason='该账号无此权限')
     @allure.description('该接口写了4个用例包含所有出院患者，根据科室筛选，根据住院号,根据姓名筛选')
     @pytest.mark.parametrize('info',
                              yaml.safe_load(read_yaml_info(Path.path['INHOS_PATIENT_LIST_LEAVE'])))
     def test_out_patient(self, info):
-        if read_yaml('headers')['Platform'] == str(3):
+        if read_yaml('headers')['Platform'] == '3':
             response = re.request_main('post', Url.PATIENT_LEAVE, headers=read_yaml('headers'),
                                        json=info['parame'])
 
@@ -75,10 +77,10 @@ class TestZhuYuan(object):
                     old_list = new_list
                     if i == 5:
                         break
-        else:
-            pass
 
     @allure.title('患者详情')
+    @pytest.mark.skipif('101010102' not in read_yaml('permissions') and "201010102" not in read_yaml('permissions'),
+                        reason='该账号无此权限')
     @allure.description('该接口写了2个用例根据userid或者住院号')
     @pytest.mark.parametrize('info',
                              yaml.safe_load(read_yaml_info(Path.path['INHOS_PATIENT_INFO'])))
@@ -87,21 +89,25 @@ class TestZhuYuan(object):
                                    json=info['parame'])
         Encapsulation.repeatOne(Url.PATIENT_INFO, info, response, patientInfo.PatientInfo.schema)
 
+    #
     @allure.title('控糖目标')
+    @pytest.mark.skipif('101010102' not in read_yaml('permissions') and "201010102" not in read_yaml('permissions'),
+                        reason='该账号无此权限')
     @pytest.mark.parametrize('info',
                              yaml.safe_load(
                                  read_yaml_info(Path.path['INHOS_PATIENT_INFO_HEALTHARCHIVES'])))
     def test_healthArchives(self, info):
-        if read_yaml('headers')['Platform'] == str(3):
-            response = re.request_main('post', Url.HEALTH_ARCHIVES, headers=read_yaml('headers'),
-                                       json=info['parame'])
+        # if read_yaml('headers')['Platform'] == '3':
+        response = re.request_main('post', Url.HEALTH_ARCHIVES, headers=read_yaml('headers'),
+                                   json=info['parame'])
 
-            Encapsulation.repeatOne(Url.HEALTH_ARCHIVES, info, response,
-                                    healthArchives.healthArchives.schema)
-        else:
-            pass
+        Encapsulation.repeatOne(Url.HEALTH_ARCHIVES, info, response,
+                                healthArchives.healthArchives.schema)
 
+    #
     @allure.title('换床')
+    @pytest.mark.skipif('1010101020104' not in read_yaml('permissions'),
+                        reason='该账号无此权限')
     @pytest.mark.parametrize('info',
                              yaml.safe_load(read_yaml_info(Path.path['INHOS_PATIENT_CHANGEBED'])))
     def test_change_bed(self, info):
@@ -124,6 +130,8 @@ class TestZhuYuan(object):
     #     # '''
     #
     @allure.title('更新患者基本信息')
+    @pytest.mark.skipif('1010101020301' not in read_yaml('permissions'),
+                        reason='该账号无此权限')
     @allure.description('更新患者信息，2个用例必传，修改手机号，修改床号')
     @pytest.mark.parametrize('info',
                              yaml.safe_load(read_yaml_info(Path.path['INHOS_PATIENT_UPDATE'])))
@@ -146,7 +154,7 @@ class TestZhuYuan(object):
     #     zy().out_hospital()])
     # def test_out_hospital(self, info):
     #
-    #     response = requests.post(url.format('inhos/patient/outHospital'), headers=read_yaml('headers'),
+    #     response = re.request_main(url.format('inhos/patient/outHospital'), headers=read_yaml('headers'),
     #                              data=info).json()
     #     logger.getlogger().info('出院患者：请求头%s传参%s返回体%s',
     #                             read_yaml('headers'), info, response)

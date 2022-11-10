@@ -6,7 +6,7 @@ from common.read_yaml import load
 from common.com import Ran
 import time
 import datetime
-from prepare.get_basic import qc_record
+from prepare.add_qc import qc_data
 from config.contast import Path
 
 sys.path.append(r'' + os.path.abspath('../'))
@@ -135,5 +135,5 @@ def read_yaml_info(path):
                **{"phone": Ran().phoneNORandomGenerator, 'card': Ran().ran_end,
                   "get_time": get_time, "num": Ran().number, "get_start_end_time": get_start_end_time,
                   "start_time": start_time,
-                  'read_basic_info': read_basic_info, 'qc_add': qc_record.qc_add})
+                  'read_basic_info': read_basic_info, 'qc_add': qc_data})
     return r
