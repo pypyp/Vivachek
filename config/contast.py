@@ -20,12 +20,12 @@ class Config(object):
           3网页端
     """
 
-    TYPE = 1
+    TYPE = 3
     IP = "47.111.0.135"
     PORT = '10192'
     info = {
         "type": TYPE,
-        "url":get_url(TYPE, IP, PORT),
+        "url": get_url(TYPE, IP, PORT),
         "login": {
             "hisId": "8036",
             "password": "123456",
@@ -65,11 +65,15 @@ class Url(object):
     HEALTH_ARCHIVES = url + 'inhos/patient/healthArchives/info'
     CHANGE_BED = url + 'inhos/patient/changebed'
     PATIENT_UPDATE = url + 'inhos/patient/update'
+    PATIENT_ADDIPT = url + 'inhos/patient/addIpt'
     PATIENT_ADD = url + 'inhos/patient/add'
     SCAN = url + "inhos/patient/info/scan"
     GLU_ADD = url + 'inhos/glu/add'
     GLU_LIST = url + "inhos/glu/list"
     GLU_REPORT = url + "inhos/glu/report"
+    GLU_APP_REPORT = url + "inhos/glu/report/compose"
+    GLU_APP_MEASURE = url + "inhos/glu/app_measureGluList"
+    GLU_WEB_MEASURE = url + "inhos/glu/measureGluReport"
     GLU_INFO = url + "inhos/glu/info"
     PATIENTTRENDCHART = url + 'inhos/glu/patientTrendChart'
     PATIENTPIECHART = url + 'inhos/glu/patientPieChart'
@@ -189,9 +193,12 @@ class Path(object):
             "INHOS_PATIENT_UPDATE": ROOT_PATH + "\\inhos_patient\\inhos_patient_update.yaml",
             "INHOS_PATIENT_ADD": ROOT_PATH + "\\inhos_patient\\inhos_patient_add.yaml",
             "INHOS_PATIENT_LEAVE": ROOT_PATH + "\\inhos_patient\\inhos_patient_leave.yaml",
+            "OUT_PATIENT_ADD_IPT": ROOT_PATH + "\\inhos_patient\\out_patient_add_ipt.yaml",
             "INHOS_GLU_ADD": ROOT_PATH + "\\inhos_patient_blood\\inhos_glu_add.yaml",
             "INHOS_GLU_DEL": ROOT_PATH + "\\inhos_patient_blood\\inhos_glu_del.yaml",
             "INHOS_GLU_LIST": ROOT_PATH + "\\inhos_patient_blood\\inhos_glu_list.yaml",
+            "INHOS_GLU_REPORT": ROOT_PATH + "\\inhos_patient_blood\\inhos_glu_report1.yaml",
+            "INHOS_MEASURE_GLU": ROOT_PATH + "\\inhos_patient_blood\\inhos_glu_measure.yaml",
             "INHOS_GLU_INFO": ROOT_PATH + "\\inhos_patient_blood\\inhos_glu_info.yaml",
             "INHOS_GLU_UPDATE": ROOT_PATH + "\\inhos_patient_blood\\inhos_glu_update.yaml",
             "INHOS_GLU_PATIENTPIECHART": ROOT_PATH + "\\inhos_patient_blood\\inhos_glu_patientPieChart.yaml",

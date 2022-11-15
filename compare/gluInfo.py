@@ -17,9 +17,6 @@ class GluInfo(BaseGlucose):
             "userId": {
                 "type": "string",
             },
-            "comment": {
-                "type": "string",
-            },
             "targetMaxValue": {
                 "type": "number",
             },

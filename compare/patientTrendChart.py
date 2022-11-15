@@ -36,9 +36,7 @@ class PatientTrendChart(BaseGlucose):
                                   "userId"],
                      "properties": {
                          "userId": {"type": "string", },
-                         "comment": {
-                             "type": "string",
-                         },
+
                      }
                  }}}
 

@@ -8,7 +8,7 @@
     code: 0
     msg: 请求成功
 
-- describe: 筛选科室住院患者
+- describe: 根据科室住院患者
   version: 2
   parame:
     deptId: '{{read_basic_info().inhos_patient_info.deptId}}'
@@ -18,7 +18,7 @@
     code: 0
     msg: 请求成功
 
-- describe: 筛选床号住院患者
+- describe: 根据床号住院患者
   version: 3
   parame:
     bedNum: '{{read_basic_info().inhos_patient_info.bedNum}}'
@@ -28,7 +28,7 @@
     code: 0
     msg: 请求成功
 
-- describe: 筛选住院号住院患者
+- describe: 根据住院号住院患者
   version: 3
   parame:
     iptNum: '{{read_basic_info().inhos_patient_info.iptNum}}'
@@ -38,7 +38,7 @@
     code: 0
     msg: 请求成功
 
-- describe: 筛选姓名住院患者
+- describe: 根据姓名住院患者
   version: 3
   parame:
     name: '{{read_basic_info().inhos_patient_info.name}}'

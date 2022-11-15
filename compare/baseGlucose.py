@@ -44,4 +44,7 @@ class BaseGlucose(object):
             "type": "integer",
         },
 
+        "comment": {
+            "type": "string",
+        }
     }

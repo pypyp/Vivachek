@@ -1,0 +1,26 @@
+
+
+
+
+- describe: 查询当天所有的血糖
+  version: 3
+  parame:
+    pageNo: 1
+    pageSize: 15
+    startTime: '{{get_start_end_time().startTime}}'
+    endTime: '{{get_start_end_time().endTime}}'
+
+  result:
+    code: 0
+    msg: 请求成功
+
+
+- describe: app查询当天所有的血糖
+  version: 1
+  parame:
+    viewType: 2
+    startTime: '{{get_start_end_time().startTime}}'
+    endTime: '{{get_start_end_time().endTime}}'
+  result:
+    code: 0
+    msg: 请求成功

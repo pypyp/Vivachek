@@ -17,3 +17,4 @@ PyMySql
 xlrd
 xlwt
 subprocess
+pytest-dependency

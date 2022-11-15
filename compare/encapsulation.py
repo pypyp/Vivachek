@@ -93,6 +93,7 @@ class Encapsulation(object):
 
         try:
             logger.log_info.info('---->接口:%s开始校验:校验返回状态码，以及数据库校验', url)
+            print(response)
             assert response['code'] == info['result']['code']
             assert response['msg'] == info['result']['msg']
 

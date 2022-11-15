@@ -55,8 +55,6 @@
   version: 1
   parame:
     userId: '{{read_basic_info().inhos_patient_blood_info.userId}}'
-    pageNo: 1
-    pageSize: 10
     startTime: '{{read_basic_info().inhos_patient_info.iptTime}}'
     endTime: '{{get_time()}}'
   result:

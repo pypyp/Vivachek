@@ -13,9 +13,7 @@ class TempBlood(PageRespanseList, BaseGlucose):
         "type": "object",
         "required": ["id", "timeType", "timeSlot", "unusual", "measureTime", "nurseId", "nurseName", "method"],
         "properties": {
-            "comment": {
-                "type": "string",
-            },
+
 
         }}
 

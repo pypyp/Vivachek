@@ -25,11 +25,11 @@ class BasicConfiguration(object):
         if '10101' or '20101' in read_yaml('permissions'):
             patient_info = get_patient.get_patient_info()
 
-            pytest.main(["-sv", './testCase/test_zhuyuan/test_patient.py'])
-            # if patient_info is not None:
-            #     if get_blood.get_blood_info(patient_info[0], patient_info[1]) is False:
-            #         if add_patient_blood.add_patient_blood(patient_info[0]) is True:
-            #             get_blood.get_blood_info(patient_info[0], patient_info[1])
+            if patient_info is not None:
+                if get_blood.get_blood_info(patient_info[0], patient_info[1]) is False:
+                    if add_patient_blood.add_patient_blood(patient_info[0]) is True:
+                        get_blood.get_blood_info(patient_info[0], patient_info[1])
+                pytest.main(["-sv", './testCase/test_zhuyuan/test_patient_blood.py'])
 
         # if "1010202" or "20103" in read_yaml('permissions'):
         #     get_order_info.get_order()

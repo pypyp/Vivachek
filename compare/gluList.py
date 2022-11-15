@@ -13,8 +13,6 @@ class GluList(BaseGlucose, PageRespanseList):
         "type": "object",
         "required": ["id", "timeType", "timeSlot", "unusual", "measureTime", "nurseId", "nurseName", "userId"],
         "properties": {
-            "comment": {
-                "type": "string", },
             "userId": {
                 "type": "string",
             }

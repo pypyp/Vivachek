@@ -1,0 +1,31 @@
+#
+#- describe: 患者入院
+#  parame:
+#    name:
+#    gender:
+#    birthday:
+#    iptNum: '{{read_basic_info().inhos_patient_info.iptNum}}'
+#    deptId:
+#    deptName:
+#    iptTime: '{{get_time()}}'
+#    userId:
+#  result:
+#    code: 1011
+#    msg: 住院号或身份证已经被绑定
+
+
+- describe: 患者成功入院
+  parame:
+    name:
+    gender:
+    birthday:
+    iptNum:
+    deptId:
+    deptName:
+    iptTime: '{{get_time()}}'
+    userId:
+  result:
+    code: 0
+    msg: 请求成功
+
+
