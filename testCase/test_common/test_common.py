@@ -13,8 +13,8 @@ import json
 from common.read_yaml import load
 from compare.encapsulation import Encapsulation
 from config.contast import Url, Path
-from compare import dept, timeType, sysPrintInfo
-from common.httpClient import RequestMain
+from compare import dept, time_type, sys_print_info
+from common.http_client import RequestMain
 
 re = RequestMain()
 

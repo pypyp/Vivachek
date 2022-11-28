@@ -27,7 +27,6 @@ class RequestMain:
         # 对异常进行捕获
         try:
             """
-
             封装request请求，将请求方法、请求地址，请求参数、请求头等信息入参。
             注 ：verify: True/False，默认为True，认证SSL证书开关；cert: 本地SSL证书。如果不需要ssl认证，可将这两个入参去掉
             """

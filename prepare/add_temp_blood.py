@@ -5,7 +5,7 @@ import time
 from common.yaml_util import  read_yaml
 
 from config.contast import Url
-from common.httpClient import RequestMain
+from common.http_client import RequestMain
 from testCase.log import logger
 
 sys.path.append(r'' + os.path.abspath('/'))

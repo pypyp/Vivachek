@@ -4,7 +4,7 @@
             */
 
     """
-from compare.orderBasicInfo import OrdertBasicInfo
+from compare.order_basic_info import OrdertBasicInfo
 
 
 class PatientOrderInfo(OrdertBasicInfo):

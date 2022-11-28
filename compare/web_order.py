@@ -4,8 +4,8 @@
             */
 
     """
-from compare.pageRespanseList import PageRespanseList
-from compare.orderBasicInfo import OrdertBasicInfo
+from compare.page_respanse_list import PageRespanseList
+from compare.order_basic_info import OrdertBasicInfo
 
 
 class WebOrder(PageRespanseList, OrdertBasicInfo):

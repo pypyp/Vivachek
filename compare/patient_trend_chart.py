@@ -4,7 +4,7 @@
             */
 
     """
-from compare.baseGlucose import BaseGlucose
+from compare.base_glucose import BaseGlucose
 
 
 class PatientTrendChart(BaseGlucose):

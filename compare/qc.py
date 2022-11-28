@@ -1,4 +1,4 @@
-from compare.pageRespanseList import PageRespanseList
+from compare.page_respanse_list import PageRespanseList
 
 
 class Qc(PageRespanseList):

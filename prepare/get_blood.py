@@ -4,7 +4,7 @@ import sys
 from common.yaml_util import write_yaml, read_yaml
 
 from config.contast import Url, Path
-from common.httpClient import RequestMain
+from common.http_client import RequestMain
 from datetime import datetime
 
 from testCase.log import logger

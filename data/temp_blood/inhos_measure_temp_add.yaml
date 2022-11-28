@@ -39,11 +39,12 @@
     value: 6
     valueUnit: 1
     method: 1
+    paperNum: 1
     nurseId: '{{read_basic_info().user_info.userId}}'
     timeType: q2h
     measureTime: '{{get_time()}}'
     unusual: 1
-    sn: '{{read_basic_info().user_info.sn}}'
+    deviceNo: '{{read_basic_info().user_info.headers.sn}}'
 
   result:
     code: 0
@@ -57,11 +58,12 @@
     value: 6
     valueUnit: 1
     method: 1
+    paperNum: 1
     nurseId: '{{read_basic_info().user_info.userId}}'
     timeType: q2h
     measureTime: '{{get_time()}}'
     unusual: 1
-    sn: '{{read_basic_info().user_info.sn}}'
+    deviceNo: '{{read_basic_info().user_info.headers.sn}}'
 
 
   result:

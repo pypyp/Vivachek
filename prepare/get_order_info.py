@@ -8,7 +8,7 @@ from common.yaml_util import write_yaml, read_yaml
 from testCase.log import logger
 
 from config.contast import Url, Path, Config
-from common.httpClient import RequestMain
+from common.http_client import RequestMain
 
 sys.path.append(r'' + os.path.abspath('/'))
 re = RequestMain()

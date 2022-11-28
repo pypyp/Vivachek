@@ -5,7 +5,7 @@ import sys
 from testCase.log import logger
 
 from config.contast import Url, Header, Client_Header,Config
-from common.httpClient import RequestMain
+from common.http_client import RequestMain
 
 sys.path.append(r'' + os.path.abspath('/'))
 re = RequestMain()

@@ -1,7 +1,7 @@
 import requests
 
 from common.yaml_util import read_yaml
-from common.httpClient import RequestMain
+from common.http_client import RequestMain
 
 re = RequestMain()
 

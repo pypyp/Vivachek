@@ -1,5 +1,5 @@
 from testCase.log import logger
-from compare.isRepeat import IsReapect
+from compare.is_repeat import IsReapect
 
 
 class Encapsulation(object):

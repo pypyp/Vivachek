@@ -4,8 +4,7 @@
      */
 
 """
-from compare.baseGlucose import BaseGlucose
-
+from compare.base_glucose import BaseGlucose
 
 
 class AppGluReport(BaseGlucose):
@@ -37,6 +36,5 @@ class AppGluReport(BaseGlucose):
     def get():
         AppGluReport.schema["title"] = '血糖模块'
         AppGluReport.schema["description"] = '患者血糖报告'
-
 
         return AppGluReport.schema

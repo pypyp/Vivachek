@@ -1,5 +1,5 @@
 from testCase.offline_basic import basic
-import path
+from path import get_project_path
 
 
 def get_url(type, ip, port):
@@ -20,7 +20,7 @@ class Config(object):
           3网页端
     """
 
-    TYPE = 3
+    TYPE = 1
     IP = "47.111.0.135"
     PORT = '10192'
     info = {
@@ -161,7 +161,7 @@ class Offline_Header(object):
     }
 
 
-ROOT_PATH = path.get_project_path() + '\\data'
+ROOT_PATH = get_project_path() + '\\data'
 
 """
 每个测试接口测试用力存放地址

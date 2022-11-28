@@ -4,8 +4,8 @@
             */
 
     """
-from compare.pageRespanseList import PageRespanseList
-from compare.patientBasicInfo import PatientBasicInfo
+from compare.page_respanse_list import PageRespanseList
+from compare.patient_basic_info import PatientBasicInfo
 from common.yaml_util import read_yaml
 
 

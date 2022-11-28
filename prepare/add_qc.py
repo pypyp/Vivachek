@@ -6,7 +6,7 @@ from testCase.log import logger
 from common.yaml_util import  read_yaml, load
 import random
 from config.contast import Url, Path
-from common.httpClient import RequestMain
+from common.http_client import RequestMain
 
 sys.path.append(r'' + os.path.abspath('/'))
 re = RequestMain()

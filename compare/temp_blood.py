@@ -4,8 +4,8 @@
             */
 
     """
-from compare.pageRespanseList import PageRespanseList
-from compare.baseGlucose import BaseGlucose
+from compare.page_respanse_list import PageRespanseList
+from compare.base_glucose import BaseGlucose
 
 
 class TempBlood(PageRespanseList, BaseGlucose):
@@ -25,4 +25,3 @@ class TempBlood(PageRespanseList, BaseGlucose):
         TempBlood.schema['properties']['lists']['items'] = TempBlood.items
 
         return TempBlood.schema
-print(TempBlood.get())

@@ -4,8 +4,8 @@
      */
 
 """
-from compare.baseGlucose import BaseGlucose
-from compare.pageRespanseList import PageRespanseList
+from compare.base_glucose import BaseGlucose
+from compare.page_respanse_list import PageRespanseList
 
 
 class GluList(BaseGlucose, PageRespanseList):

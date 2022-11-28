@@ -9,8 +9,8 @@ from common.yaml_util import read_bastase_sql, read_yaml
 from common.open_database import MysqlDb
 from compare.encapsulation import Encapsulation
 from config.contast import Url, Path
-from compare import qc, qcAnalysis, qcStatistics
-from common.httpClient import RequestMain
+from compare import qc, qc_analysis, qc_statistics
+from common.http_client import RequestMain
 from common.read_fun import LoadBasic
 import datetime, time
 
@@ -132,7 +132,7 @@ class Test_qc_record(object):
             response = re.request_main('post', Url.QC_ANALYSIS, headers=read_yaml('headers'),
                                        json=info['parame'])
 
-            Encapsulation.repeatOne(Url.QC_ANALYSIS, info, response, qcAnalysis.Analysis.schema)
+            Encapsulation.repeatOne(Url.QC_ANALYSIS, info, response, qc_analysis.Analysis.schema)
 
     #
     @allure.title('质控统计')
@@ -144,4 +144,4 @@ class Test_qc_record(object):
             response = re.request_main('post', Url.QC_STATISTICS, headers=read_yaml('headers'),
                                        json=info['parame'])
 
-            Encapsulation.repeatOne(Url.QC_STATISTICS, info, response, qcStatistics.QcStatistic.get())
+            Encapsulation.repeatOne(Url.QC_STATISTICS, info, response, qc_statistics.QcStatistic.get())

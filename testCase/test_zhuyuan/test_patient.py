@@ -5,12 +5,12 @@ import pytest
 import yaml
 from common.read_fun import read_yaml_info
 from testCase.log import logger
-from common.yaml_util import read_bastase_sql, read_yaml
+from common.yaml_util import read_yaml
 from common.open_database import MysqlDb
 from compare.encapsulation import Encapsulation
-from config.contast import Url, Path
-from compare import patient, leavePatient, patientInfo, healthArchives
-from common.httpClient import RequestMain
+from config.contast import Url, Path, Config
+from compare import patient, leave_patient, patient_info, health_archives
+from common.http_client import RequestMain
 from datetime import datetime
 
 sys.path.append(r'' + os.path.abspath('../../'))
@@ -67,7 +67,7 @@ class TestZhuYuan(object):
                                        json=info['parame'])
 
             Encapsulation.repeatOne(Url.PATIENT_LEAVE, info, response,
-                                    leavePatient.leavePatinet.get())
+                                    leave_patient.leavePatinet.get())
             if response['data']['totalPage'] > 1:
                 old_list = response['data']['lists']
                 for i in range(2, response['data']['totalPage'] + 1):
@@ -75,7 +75,7 @@ class TestZhuYuan(object):
                     response = re.request_main('post', Url.PATIENT_LEAVE, headers=read_yaml('headers'),
                                                json=info['parame'])
                     new_list = Encapsulation.repeatTwo(Url.PATIENT_LEAVE, info, response, old_list,
-                                                       leavePatient.leavePatinet.get())
+                                                       leave_patient.leavePatinet.get())
                     old_list = new_list
                     if i == 5:
                         break
@@ -110,12 +110,11 @@ class TestZhuYuan(object):
             Encapsulation.repeatThree(Url.PATIENT_ADDIPT, info, response)
             if response['code'] == 0:
                 data = MysqlDb().select_db(
-                    "select * from {}.`patient_info`where user_id=\'{}\'".format(read_bastase_sql()[4],
+                    "select * from {}.`patient_info`where user_id=\'{}\'".format(Config.database['database'],
                                                                                  info['parame'][
                                                                                      'userId']))
 
                 assert data[0]['status'] == 1
-
 
             logger.log_info.info('---->接口%s结束一次用例测试' % Url.PATIENT_ADDIPT)
 
@@ -132,7 +131,7 @@ class TestZhuYuan(object):
     def test_patient_info(self, info):
         response = re.request_main('post', Url.PATIENT_INFO, headers=read_yaml('headers'),
                                    json=info['parame'])
-        Encapsulation.repeatOne(Url.PATIENT_INFO, info, response, patientInfo.PatientInfo.schema)
+        Encapsulation.repeatOne(Url.PATIENT_INFO, info, response, patient_info.PatientInfo.schema)
 
     #
     @allure.title('控糖目标')
@@ -147,8 +146,7 @@ class TestZhuYuan(object):
                                        json=info['parame'])
 
             Encapsulation.repeatOne(Url.HEALTH_ARCHIVES, info, response,
-                                    healthArchives.healthArchives.schema)
-
+                                    health_archives.healthArchives.schema)
 
     @allure.title('换床')
     @pytest.mark.skipif('1010101020104' not in read_yaml('permissions'),
@@ -161,7 +159,7 @@ class TestZhuYuan(object):
                                        json=info['parame'])
 
             data = MysqlDb().select_db(
-                "select * from {}.`patient_info`where user_id=\'{}\'".format(read_bastase_sql()[4],
+                "select * from {}.`patient_info`where user_id=\'{}\'".format(Config.database['database'],
                                                                              info['parame'][
                                                                                  'userId']))
 
@@ -185,9 +183,10 @@ class TestZhuYuan(object):
 
         response = re.request_main('post', Url.PATIENT_UPDATE, headers=read_yaml('headers'),
                                    json=info['parame'])
-        data = MysqlDb().select_db("select * from {}.`patient_info`where user_id=\'{}\'".format(read_bastase_sql()[4],
-                                                                                                info['parame'][
-                                                                                                    'userId']))
+        data = MysqlDb().select_db(
+            "select * from {}.`patient_info`where user_id=\'{}\'".format(Config.database['database'],
+                                                                         info['parame'][
+                                                                             'userId']))
         Encapsulation.repeatThree(Url.PATIENT_UPDATE, info, response)
 
         assert data[0]['bed_num'] == info['parame']['bedNum']

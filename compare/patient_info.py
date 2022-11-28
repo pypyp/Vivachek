@@ -4,7 +4,7 @@
             */
 
     """
-from compare.patientBasicInfo import PatientBasicInfo
+from compare.patient_basic_info import PatientBasicInfo
 class PatientInfo(PatientBasicInfo):
     schema = {
         "$schema": "http://json-schema.org/draft-04/schema#",

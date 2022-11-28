@@ -5,7 +5,7 @@ from config.contast import Config
 
 from common.yaml_util import read_yaml
 from testCase.log import logger
-import pytest
+
 
 """
 /**
@@ -13,7 +13,6 @@ import pytest
 */
 
 """
-
 
 
 class BasicConfiguration(object):
@@ -29,15 +28,15 @@ class BasicConfiguration(object):
                 if get_blood.get_blood_info(patient_info[0], patient_info[1]) is False:
                     if add_patient_blood.add_patient_blood(patient_info[0]) is True:
                         get_blood.get_blood_info(patient_info[0], patient_info[1])
-                pytest.main(["-sv", './testCase/test_zhuyuan/test_patient_blood.py'])
 
-        # if "1010202" or "20103" in read_yaml('permissions'):
-        #     get_order_info.get_order()
+        if "1010202" or "20103" in read_yaml('permissions'):
+            get_order_info.get_order()
         #
-        # if "1010206" or "20104" in read_yaml('permissions'):
-        #     if get_temp_blood_info.get_temp_blood_info() is False:
-        #         if add_temp_blood.add_temp_blood_info() is True:
-        #             get_temp_blood_info.get_temp_blood_info()
+        if "1010206" or "20104" in read_yaml('permissions'):
+            if get_temp_blood_info.get_temp_blood_info() is False:
+                if add_temp_blood.add_temp_blood_info() is True:
+                    get_temp_blood_info.get_temp_blood_info()
+            # pytest.main(["-sv", './testCase/test_zhuyuan/test_temp_blood.py'])
         # if "106" or "2050104" in read_yaml('permissions'):
         #     if get_paper_liquid_sn.get_paper_liquid_sn() is True:
         #         if get_qc_info.get_qc_info() is False:
